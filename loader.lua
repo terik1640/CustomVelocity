@@ -13,7 +13,7 @@ local downloadFile: (path: string, func: ((string) -> string)?) -> string = func
         if not isfile(path) then
                 local suc: boolean, res: string = pcall(function()
                         return game:HttpGet(
-                                'https://raw.githubusercontent.com/Copiums/velo/' ..
+                                'https://raw.githubusercontent.com/terik1640/CustomVelocity/' ..
                                 readfile('velo/profiles/commit.txt') .. '/' ..
                                 select(1, path:gsub('velo/', '')),
                                 true
@@ -50,7 +50,7 @@ end;
 
 if not shared.VeloDeveloper then
         local _, subbed: string = pcall(function()
-                return game:HttpGet('https://github.com/Copiums/velo');
+                return game:HttpGet('https://github.com/terik1640/CustomVelocity');
         end);
         local commit: string? = subbed:find('currentOid');
         commit = commit and subbed:sub(commit + 13, commit + 52) or nil;
