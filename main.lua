@@ -112,7 +112,7 @@ local httpService: HttpService = cloneref(game:GetService("HttpService"));
 local function downloadFile(path, func)
 	    if not isfile(path) then
 		        local suc, res = pcall(function()
-		            	return game:HttpGet('https://raw.githubusercontent.com/Copiums/Velocity/'..readfile('velo/profiles/commit.txt')..'/'..select(1, path:gsub('velo/', '')), true)
+		            	return game:HttpGet('https://raw.githubusercontent.com/terik1640/CustomVelocity/'..readfile('velo/profiles/commit.txt')..'/'..select(1, path:gsub('velo/', '')), true)
 		        end);
 		        if not suc or res == '404: Not Found' then
 		            	error(res);
@@ -143,7 +143,7 @@ local function finishLoading(): nil
                   				      if shared.VeloDeveloper then
                   					            loadstring(readfile('velo/loader.lua'), 'loader')()
                   				      else
-                  					            loadstring(game:HttpGet('https://raw.githubusercontent.com/Copiums/Velocity/'..readfile('velo/profiles/commit.txt')..'/loader.lua', true), 'loader')()
+                  					            loadstring(game:HttpGet('https://raw.githubusercontent.com/terik1640/CustomVelocity/'..readfile('velo/profiles/commit.txt')..'/loader.lua', true), 'loader')()
                   			        end
                   			]]
 			                  if shared.VeloDeveloper then
@@ -215,7 +215,7 @@ if not shared.VeloIndependent then
 		else
 				if not shared.VeloDeveloper then
 						local suc: boolean, res: string? = pcall(function()
-								return game:HttpGet('https://raw.githubusercontent.com/Copiums/Velocity/'..readfile('velo/profiles/commit.txt')..'/games/'..game.PlaceId..'.lua', true);
+								return game:HttpGet('https://raw.githubusercontent.com/terik1640/CustomVelocity/'..readfile('velo/profiles/commit.txt')..'/games/'..game.PlaceId..'.lua', true);
 						end);
 						if suc and res ~= '404: Not Found' then
 								loadstring(downloadFile('velo/games/'..game.PlaceId..'.lua'), tostring(game.PlaceId))(...);
